@@ -14,7 +14,7 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Bratislava";
-
+  services.udisks2.enable = true;
   programs.hyprland = {
 	enable = true;
 	xwayland.enable = true;
@@ -51,9 +51,6 @@ services.greetd = {
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
    services.pipewire = {
      enable = true;
      pulse.enable = true;
