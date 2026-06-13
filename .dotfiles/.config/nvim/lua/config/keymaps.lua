@@ -1,0 +1,81 @@
+local map = vim.keymap.set
+
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = false })
+vim.api.nvim_set_keymap("v", "<C-d>", "<C-d>zz", { noremap = true })
+vim.api.nvim_set_keymap("v", "<C-u>", "<C-u>zz", { noremap = true })
+
+-- Telescope
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
+map("n", "<C-p>", "<cmd>Telescope git_files<cr>", { desc = "Git files" })
+
+-- Harpoon
+map("n", "<leader>a", function()
+	require("harpoon"):list():add()
+end, { desc = "Harpoon add file" })
+map("n", "<C-e>", function()
+	local h = require("harpoon")
+	h.ui:toggle_quick_menu(h:list())
+end, { desc = "Harpoon menu" })
+map("n", "<C-h>", function()
+	require("harpoon"):list():select(1)
+end, { desc = "Harpoon file 1" })
+map("n", "<C-t>", function()
+	require("harpoon"):list():select(2)
+end, { desc = "Harpoon file 2" })
+map("n", "<C-n>", function()
+	require("harpoon"):list():select(3)
+end, { desc = "Harpoon file 3" })
+map("n", "<C-s>", function()
+	require("harpoon"):list():select(4)
+end, { desc = "Harpoon file 4" })
+-- LSP (attach to buffer when LSP connects)
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(event)
+		local opts = { buffer = event.buf }
+		map("n", "gd", vim.lsp.buf.definition, opts)
+		map("n", "K", vim.lsp.buf.hover, opts)
+		map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+		map("n", "<leader>rn", function()
+			return ":IncRename " .. vim.fn.expand("<cword>")
+		end, { buffer = event.buf, expr = true, desc = "Rename" })
+		map("n", "]d", vim.diagnostic.goto_next, opts)
+		map("n", "[d", vim.diagnostic.goto_prev, opts)
+	end,
+})
+
+-- Git
+map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+map("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next hunk" })
+map("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Prev hunk" })
+map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunk" })
+map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Blame line" })
+
+-- Refactoring
+map({ "n", "x" }, "<leader>re", function()
+	return require("refactoring").extract_func()
+end, { expr = true, desc = "Extract function" })
+map({ "n", "x" }, "<leader>rv", function()
+	return require("refactoring").extract_var()
+end, { expr = true, desc = "Extract variable" })
+map({ "n", "x" }, "<leader>ri", function()
+	return require("refactoring").inline_var()
+end, { expr = true, desc = "Inline variable" })
+
+-- DAP
+map("n", "<leader>db", function()
+	require("dap").toggle_breakpoint()
+end, { desc = "Toggle breakpoint" })
+map("n", "<leader>dc", function()
+	require("dap").continue()
+end, { desc = "Continue" })
+map("n", "<leader>di", function()
+	require("dap").step_into()
+end, { desc = "Step into" })
+map("n", "<leader>do", function()
+	require("dap").step_over()
+end, { desc = "Step over" })
+map("n", "<leader>du", function()
+	require("dapui").toggle()
+end, { desc = "Toggle DAP UI" })
