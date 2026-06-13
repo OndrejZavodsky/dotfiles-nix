@@ -114,7 +114,6 @@ services.keyd = {
 	 gnutar
 	 jq
 	 file
-	 fd
 	 eza
 	 bat
 	 btop
@@ -124,9 +123,9 @@ services.keyd = {
     neovim
     gnumake    
     cmake
-    ripgrep
     brave
 	 rustc
+	 jdk21
 	 cargo
 	 clang
 	 python3

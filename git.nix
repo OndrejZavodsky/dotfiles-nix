@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+home.packages = with pkgs; [
+lazygit
+];
   programs.git = {
     enable = true;
 
@@ -14,7 +18,7 @@
       "result"
 		"account.conf"
     ];
-
+		
     settings = {
       init.defaultBranch = "main";
 
