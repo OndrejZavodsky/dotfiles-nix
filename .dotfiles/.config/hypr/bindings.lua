@@ -18,6 +18,9 @@ hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.window.swap({ direction = "right" 
 hl.bind(mainMod .. " + SHIFT + UP", hl.dsp.window.swap({ direction = "up" }), { desc = "Swap up" })
 hl.bind(mainMod .. " + SHIFT + DOWN", hl.dsp.window.swap({ direction = "down" }), { desc = "Swap down" })
 
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true, drag = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true, drag = true })
+
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }), { desc = "Next workspace" })
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.focus({ workspace = "e-1" }), { desc = "Previous workspace" })
 
