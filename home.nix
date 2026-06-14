@@ -21,7 +21,7 @@
     dev() {
         local file
         file="$(fd . "$HOME" --type f --hidden --exclude .git | fzf)"
-        [ -n "$file" ] && dev.sh "$file"
+        [ -n "$file" ] && $HOME/.local/bin/dev.sh "$file"
     }
 
     s() {
@@ -38,7 +38,7 @@
 };
 
 home.sessionPath = [
-  ".local/bin"
+  "${config.home.homeDirectory}/.local/bin"
 ];
 	home.file.".config/waybar".source = ./.dotfiles/.config/waybar;
 	home.file.".config/ghostty".source = ./.dotfiles/.config/ghostty;
