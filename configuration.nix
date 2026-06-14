@@ -63,6 +63,7 @@ services.greetd = {
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
+		w3m
 	 	ghostty
 		discord
 		keyd
