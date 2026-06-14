@@ -46,7 +46,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("ghostty -e nvim"), { desc = 
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("ghostty -e yazi"), { desc = "File manager" })
 hl.bind("PRINT", hl.dsp.exec_cmd("grimblast copy area"), { desc = "Screenshot" })
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("ghostty -e btop"), { desc = "Activity" })
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("ghostty -e nvim ~/notes/"), { desc = "Notes" })
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("ghostty -e nvim ~/Notes/"), { desc = "Notes" })
 
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("brave --app=https://chatgpt.com"), { desc = "ChatGPT" })
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("brave --app=https://perplexity.ai"), { desc = "Perplexity" })

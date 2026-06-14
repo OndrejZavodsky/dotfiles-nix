@@ -19,6 +19,7 @@ programs.neovim = {
 		extraPackages = with pkgs; [
 			gcc
 			gnumake
+			unzip
 		];
 	};
 

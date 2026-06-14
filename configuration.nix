@@ -88,7 +88,6 @@ services.keyd = {
 	 killall
 	 wget
 	 curl
-	 unzip
 	 zip
 	 gnutar
 	 jq
