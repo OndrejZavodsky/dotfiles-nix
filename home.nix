@@ -22,7 +22,7 @@
 	home.file.".config/tmux".source = ./.dotfiles/.config/tmux;
 	home.file.".config/hypr".source = ./.dotfiles/.config/hypr;
 	home.file."wallpapers".source = ./.dotfiles/wallpapers;
-	home.file."wallpapers".source = ./.dotfiles/.local/bin;
+	home.file.".local/bin".source = ./.dotfiles/.local/bin;
 	home.file.".bashrc".source = ./.dotfiles/.bashrc;
 	home.pointerCursor = {
   gtk.enable = true;
