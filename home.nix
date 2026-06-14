@@ -18,10 +18,11 @@
   enable = true;
 
   initExtra = ''
-    dev() {
+    export PATH="$HOME/.local/bin:$PATH"
+	 dev() {
         local file
         file="$(fd . "$HOME" --type f --hidden --exclude .git | fzf)"
-        [ -n "$file" ] && $HOME/.local/bin/dev.sh "$file"
+        [ -n "$file" ] && dev.sh "$file"
     }
 
     s() {
@@ -32,11 +33,13 @@
         local query=$(echo "$*" | tr ' ' '+')
         w3m "https://search.brave.com/search?q=$query"
     }
-
     bind -x '"\C-f":dev'
   '';
-};
+  profileExtra = ''
+  [[ -f ~/.bashrc ]] && source ~/.bashrc
+'';
 
+};
 home.sessionPath = [
   "${config.home.homeDirectory}/.local/bin"
 ];
