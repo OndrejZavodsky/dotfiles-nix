@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+		./desctop.nix
     ];
   nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
@@ -15,30 +16,10 @@
 
   time.timeZone = "Europe/Bratislava";
   services.udisks2.enable = true;
-  programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
-  };
    
    hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
 
-	programs.hyprlock.enable = true;
-	security.pam.services.hyprlock = {};
-services.greetd = {
-  enable = true;
-  settings = {
-    initial_session = {
-      command = "Hyprland";
-      user = "ondrejz"; 
-    };
-    # Fallback to tuigreet if you ever manually log out of Hyprland
-    default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
-      user = "greeter";
-    };
-  };
-};
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -67,7 +48,6 @@ services.greetd = {
 	 	ghostty
 		discord
 		keyd
-	 	rofi
 	 	spotify
 	 	yazi
 	 	aerc
@@ -106,7 +86,6 @@ services.keyd = {
 };  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-	 kitty
 	 killall
 	 wget
 	 curl
@@ -118,9 +97,7 @@ services.keyd = {
 	 eza
 	 bat
 	 btop
-    waybar
     git
-    hyprpaper
     neovim
     gnumake    
     cmake
