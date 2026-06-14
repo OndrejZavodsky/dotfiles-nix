@@ -26,7 +26,5 @@ tmux new-session -d -s "$SESSION" -n editor -c "$PROJECT_DIR"
 tmux send-keys -t "$SESSION:editor" "nvim \"$FILENAME\"" C-m
 # Tools window
 tmux new-window -t "$SESSION" -n terminal -c "$PROJECT_DIR"
-tmux new-window -t "$SESSION" -n agents -c "$PROJECT_DIR"
-tmux send-keys -t "$SESSION:agents" "opencode ." C-m
 tmux attach -t "$SESSION"
 

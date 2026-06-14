@@ -38,7 +38,7 @@
 };
 
 home.sessionPath = [
-  "${config.home.homeDirectory}/.local/bin"
+  ".local/bin"
 ];
 	home.file.".config/waybar".source = ./.dotfiles/.config/waybar;
 	home.file.".config/ghostty".source = ./.dotfiles/.config/ghostty;
