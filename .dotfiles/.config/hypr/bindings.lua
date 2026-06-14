@@ -18,11 +18,6 @@ hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.window.swap({ direction = "right" 
 hl.bind(mainMod .. " + SHIFT + UP", hl.dsp.window.swap({ direction = "up" }), { desc = "Swap up" })
 hl.bind(mainMod .. " + SHIFT + DOWN", hl.dsp.window.swap({ direction = "down" }), { desc = "Swap down" })
 
-hl.bind("SUPER + CTRL + Left", hl.dsp.window.resize({ x = -20, y = 0, relative = true }))
-hl.bind("SUPER + CTRL + Right", hl.dsp.window.resize({ x = 20, y = 0, relative = true }))
-hl.bind("SUPER + CTRL + Up", hl.dsp.window.resize({ x = 0, y = -20, relative = true }))
-hl.bind("SUPER + CTRL + Down", hl.dsp.window.resize({ x = 0, y = 20, relative = true }))
-
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }), { desc = "Next workspace" })
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.focus({ workspace = "e-1" }), { desc = "Previous workspace" })
 
@@ -41,6 +36,9 @@ for i = 1, 10 do
 		{ desc = "Move to workspace " .. ws }
 	)
 end
+
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(~/.local/bin/powermenu), {desc = "launches powermenu"})
+
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun"), { desc = "Launch apps" })
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("ghostty"), { desc = "Terminal" })
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("brave"), { desc = "Browser" })
