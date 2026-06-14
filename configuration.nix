@@ -51,7 +51,6 @@
 	 	spotify
 	 	yazi
 	 	aerc
-	 	tmux
   	 	blueman
 	 	pavucontrol
 	 	networkmanagerapplet
@@ -98,8 +97,6 @@ services.keyd = {
 	 bat
 	 btop
     git
-    neovim
-    gnumake    
     cmake
     brave
 	 rustc
@@ -107,7 +104,6 @@ services.keyd = {
 	 cargo
 	 clang
 	 python3
-	 gcc
 	 gnum4
   ];
   fonts.packages = with pkgs; [

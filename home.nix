@@ -5,6 +5,7 @@
    imports = [
 		./nvim.nix
 		./git.nix
+		./tmux.nix
 	];
 	home.username = "ondrejz";
 	home.homeDirectory = "/home/ondrejz";
