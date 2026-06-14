@@ -6,5 +6,5 @@ case "$choice" in
     Shutdown) systemctl poweroff ;;
     Reboot) systemctl reboot ;;
     Suspend) systemctl suspend ;;
-    Logout) hyprctl dispatch exit ;;
+    Logout) pkill Hyprland;;
 esac
