@@ -104,6 +104,12 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 
+
+	#automatic cleanup and optimization of the store
+	nix.gc.automatic = true;
+	nix.gc.dates = "weekly";
+	nix.gc.options = "--delete-older-than 10d";
+	nix.settings.auto-optimise-store = true;
   system.stateVersion = "26.05"; 
 
 }
