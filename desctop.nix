@@ -6,6 +6,7 @@
 	enable = true;
 	xwayland.enable = true;
   };
+  
 	programs.hyprlock.enable = true;
 	security.pam.services.hyprlock = {};
 	services.greetd = {
@@ -28,9 +29,5 @@
 		hypridle
 		hyprpaper
 	];
-	programs.rofi = {
-		enable = true;
-		theme = ./.dotfiles/themes/theme.rasi;
-	};
 
 }

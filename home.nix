@@ -56,4 +56,10 @@ home.sessionPath = [
   name = "Vanilla-DMZ";
   size = 24;
 };
+
+	programs.rofi = {
+		enable = true;
+		theme = ./.dotfiles/themes/theme.rasi;
+	};
+
 }

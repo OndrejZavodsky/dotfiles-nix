@@ -6,7 +6,7 @@
     accent:     #c4a7e7;
     highlight:  #ebbcba;
 
-	 font: "JetBrainsMono Nerd Font Mono 14"
+	 font: "JetBrainsMono Nerd Font Mono 14";
 }
 
 configuration {
@@ -26,37 +26,45 @@ window {
 mainbox {
     children: [inputbar, listview];
     spacing: 12px;
+	 background-color: @bg;
 }
 
 inputbar {
+	 placeholder-color: @bg-alt;
     background-color: @bg-alt;
     border-radius: 12px;
     padding: 12px;
+	 children: [prompt, entry];
+	 spacing: 8px;
 }
 
 prompt {
     text-color: @accent;
+	 background-color: transparent;
 }
 
 entry {
     text-color: @fg;
-    placeholder-color: @muted;
+    background-color: transparent;
+	 vertical-align: 0.5;
 }
 
 listview {
     lines: 8;
     columns: 1;
     spacing: 6px;
-    background-color: transparent;
+    background-color: @bg-alt;
 }
 
 element {
     padding: 10px;
     border-radius: 10px;
+	 background-color: @bg-alt;
 }
 
 element-text {
     text-color: @fg;
+	 background-color: transparent;
 }
 
 element selected {
@@ -64,5 +72,5 @@ element selected {
 }
 
 element selected element-text {
-    text-color: @bg;
+    text-color: @highlight;
 }
