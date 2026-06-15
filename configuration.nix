@@ -47,6 +47,7 @@
     packages = with pkgs; [
       tree
 		w3m
+		teams-for-linux
 	 	ghostty
 		discord
 	 	spotify

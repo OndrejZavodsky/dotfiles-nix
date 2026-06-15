@@ -25,9 +25,12 @@
 	environment.systemPackages = with pkgs; [
 		kitty
 		waybar
-		rofi
 		hypridle
 		hyprpaper
 	];
+	programs.rofi = {
+		enable = true;
+		theme = ./.dotfiles/themes/theme.rasi;
+	};
 
 }
