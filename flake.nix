@@ -8,9 +8,14 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
-	outputs = { nixpkgs, home-manager, ... }: {
+
+	outputs = { nixpkgs, home-manager, ... }:
+	let
+		system = "x86_64-linux";
+	in {
 		nixosConfigurations.onix = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
+			inherit system;
+
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager
@@ -23,6 +28,14 @@
 					};
 				}
 			];
+		};
+
+		devShells.${system} = {
+			rust = import ./shells/rust.nix { inherit pkgs; };
+			
+			java = import ./shells/java.nix { inherit pkgs; };
+
+			python = import ./shells/python.nix { inherit pkgs; };
 		};
 	};
 
