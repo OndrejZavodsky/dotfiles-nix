@@ -12,7 +12,7 @@
   enable = true;
   settings = {
     initial_session = {
-      command = "Hyprland";
+      command = "start-hyprland";
       user = "ondrejz"; 
     };
     # Fallback to tuigreet if you ever manually log out of Hyprland

@@ -5,12 +5,13 @@
     [
       ./hardware-configuration.nix
 		./desctop.nix
+		./keyd.nix
     ];
   nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "onix"; # Define your hostname.
+  networking.hostName = "onix"; 
 
   networking.networkmanager.enable = true;
 
@@ -47,42 +48,16 @@
 		w3m
 	 	ghostty
 		discord
-		keyd
 	 	spotify
 	 	yazi
 	 	aerc
-  	 	blueman
-	 	pavucontrol
+  	 	blueman#bluetooth
+	 	pavucontrol#sound
 	 	networkmanagerapplet
     	fzf
     ];
   };
-services.keyd = {
-  enable = true;
-
-  keyboards.default = {
-    ids = [ "*" ];
-
-    settings = {
-	 	main = {
-			capslock = "overload(control, esc)";
-		};
-      control = {
-        j = "enter";
-        h = "backspace";
-      };
-		alt = {
-        j = "=";
-        k = "-";
-      };
-
-      shiftalt = {
-        j = "+";
-        k = "_";
-      };
-    };
-  };
-};  programs.firefox.enable = true;
+ programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
 	 killall
