@@ -74,10 +74,7 @@
     cmake
     brave
 	 rustc
-	 jdk21
-	 cargo
 	 clang
-	 python3
 	 gnum4
   ];
   fonts.packages = with pkgs; [
