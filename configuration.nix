@@ -14,7 +14,8 @@
   networking.hostName = "onix"; 
 
   networking.networkmanager.enable = true;
-
+  networking.modemmanager.enable = true;
+  
   time.timeZone = "Europe/Bratislava";
   services.udisks2.enable = true;
    
@@ -60,9 +61,8 @@
  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-	 killall
-	 wget
 	 curl
+	 busybox
 	 zip
 	 gnutar
 	 jq
