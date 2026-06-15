@@ -11,3 +11,5 @@ pyright_cfg.settings = {
 
 vim.lsp.config("pyright", pyright_cfg)
 vim.lsp.enable("pyright")
+
+vim.opt.clipboard = "unnamedplus"

@@ -8,6 +8,9 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 0 }), { desc = "Ful
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo(), { desc = "Pseudo tile" })
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"), { desc = "Toggle split" })
 
+hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
 hl.bind(mainMod .. " + LEFT", hl.dsp.focus({ direction = "left" }), { desc = "Focus left" })
 hl.bind(mainMod .. " + RIGHT", hl.dsp.focus({ direction = "right" }), { desc = "Focus right" })
 hl.bind(mainMod .. " + UP", hl.dsp.focus({ direction = "up" }), { desc = "Focus up" })

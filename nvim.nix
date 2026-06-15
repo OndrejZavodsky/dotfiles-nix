@@ -12,6 +12,7 @@ home.packages = with pkgs; [
 	 lombok
 	pyright
 	vimPlugins.nvim-java-test
+	wl-clipboard
 ];
 home.file.".config/nvim".source = ./.dotfiles/.config/nvim;
 programs.neovim = {
