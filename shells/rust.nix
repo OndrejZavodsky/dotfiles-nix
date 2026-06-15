@@ -13,6 +13,6 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    echo "Rust development environment "
+    echo "Rust development environment";
   '';
 }
