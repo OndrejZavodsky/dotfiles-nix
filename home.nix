@@ -6,6 +6,7 @@
 		./nvim.nix
 		./git.nix
 		./tmux.nix
+		./blueman.nix
 	];
 	home.username = "ondrejz";
 	home.homeDirectory = "/home/ondrejz";
