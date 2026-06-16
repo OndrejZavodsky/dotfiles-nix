@@ -86,6 +86,13 @@
   	 nerd-fonts.jetbrains-mono
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  programs.steam = {
+    enable = config.home-manager.users.ondrejz.modules.game.enable;
+    remotePlay.openFirewall = true; 
+    dedicatedServer.openFirewall = true; 
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

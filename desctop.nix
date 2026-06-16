@@ -6,7 +6,6 @@
 	enable = true;
 	xwayland.enable = true;
   };
-  
 	programs.hyprlock.enable = true;
 	security.pam.services.hyprlock = {};
 	services.greetd = {
@@ -16,7 +15,6 @@
       command = "start-hyprland";
       user = "ondrejz"; 
     };
-    # Fallback to tuigreet if you ever manually log out of Hyprland
     default_session = {
       command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
       user = "greeter";
