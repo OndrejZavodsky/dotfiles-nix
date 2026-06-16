@@ -22,7 +22,11 @@
    hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
 
-
+	xdg.portal = {
+	  enable = true;
+	  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+	  config.common.default = [ "hyprland" "gtk" ];
+	};
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
