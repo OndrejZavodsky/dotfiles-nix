@@ -116,6 +116,9 @@
 
 
 	#automatic cleanup and optimization of the store
+	system.autoUpgrade.enable = true;
+	system.autoUpgrade.dates = "weekly";
+
 	nix.gc.automatic = true;
 	nix.gc.dates = "weekly";
 	nix.gc.options = "--delete-older-than 10d";
