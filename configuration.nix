@@ -6,15 +6,13 @@
       ./hardware-configuration.nix
 		./desctop.nix
 		./keyd.nix
+		./network.nix
     ];
   nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "onix"; 
 
-  networking.networkmanager.enable = true;
-  networking.modemmanager.enable = true;
   
   time.timeZone = "Europe/Bratislava";
   services.udisks2.enable = true;
@@ -59,7 +57,6 @@
 	 	aerc
   	 	blueman#bluetooth
 	 	pavucontrol#sound
-	 	networkmanagerapplet
     	fzf
     ];
   };
