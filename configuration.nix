@@ -97,6 +97,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  security.polkit.enable = true;
 
 
   # Enable the OpenSSH daemon.

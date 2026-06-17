@@ -13,13 +13,14 @@
   '';
 
   environment.shellAliases = {
-    lte-on     = "nmcli --ask connection up MyLte";
-    lte-off    = "nmcli connection down MyLte";
+    lte-on     = "sudo nmcli --ask connection up MyLte";
+    lte-off    = "sudo nmcli connection down MyLte";
     lte-status = "mmcli -m any";
   };
 
   environment.systemPackages = [
     pkgs.networkmanagerapplet
 	 pkgs.usb-modeswitch
+  	 pkgs.lxqt.lxqt-policykit  # Simple authentication agent for Hyprland
   ];
 }
