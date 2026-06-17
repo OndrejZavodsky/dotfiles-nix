@@ -7,7 +7,7 @@
 		./git.nix
 		./tmux.nix
 		./theme-utils.nix
-		./bash.nix
+		./shell.nix
 		./game.nix
 	];
 	home.username = "ondrejz";
