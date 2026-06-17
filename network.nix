@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
   networking.hostName = "onix"; 
   networking.networkmanager.enable = true;
   networking.modemmanager.enable = true;
+  systemd.services.ModemManager.wantedBy = ["multi-user.target"];
 
   # Automate the USB mode-switch from CDC Ethernet to QMI mode at boot/plugin
   services.udev.extraRules = ''
@@ -12,12 +13,13 @@
   '';
 
   environment.shellAliases = {
-    lte-on     = "nmcli connection up MyLTE";
-    lte-off    = "nmcli connection down MyLTE";
+    lte-on     = "nmcli --ask connection up MyLte";
+    lte-off    = "nmcli connection down MyLte";
     lte-status = "mmcli -m any";
   };
 
   environment.systemPackages = [
     pkgs.networkmanagerapplet
+	 pkgs.usb-modeswitch
   ];
 }
