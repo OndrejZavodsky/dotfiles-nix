@@ -4,5 +4,7 @@ pkgs.mkShell {
   packages = with pkgs; [
     python3
   ];
-  shellHook = ''echo "Python development environment"; ''
+  shellHook = ''echo "Python development environment"
+  exec zsh
+  ''
 }

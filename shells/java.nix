@@ -5,5 +5,7 @@ pkgs.mkShell {
     jdk21
     gradle
   ];
-  shellHook = ''echo "java development environment"'';
+  shellHook = ''echo "java development environment"
+	exec zsh
+  '';
 }
