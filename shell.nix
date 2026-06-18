@@ -1,18 +1,17 @@
 { pkgs, config, ... }: {
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
+programs.zsh = {
 
+    enable = true;
+
+    enableCompletion = true;
     initContent = ''
       export PATH="$HOME/.local/bin:$PATH"
-
       dev() {
           local file
           file="$(fd . "$HOME" --type f --hidden --exclude .git | fzf)"
           [ -n "$file" ] && dev.sh "$file"
       }
-
       s() {
           if [ $# -eq 0 ]; then
               echo "Please provide a search term."
@@ -21,14 +20,16 @@
           local query=$(echo "$*" | tr ' ' '+')
           w3m "https://search.brave.com/search?q=$query"
       }
-
-      zle -N dev_widget dev
-      bindkey '^F' dev_widget
     '';
+
+
 
     profileExtra = ''
+
       [[ -f ~/.zshrc ]] && source ~/.zshrc
+
     '';
+
   };
 	programs.starship = {
     enable = true;
