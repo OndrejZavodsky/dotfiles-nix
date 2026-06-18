@@ -61,7 +61,7 @@
         show_always = true;
         style_user = "bg:surface fg:rose bold";
         style_root = "bg:surface fg:love bold";
-		  format = "[ $user ](bg:iris fg:base bold)[](bg:foam fg:iris)";
+		  format = "[ $user ](bg:rose fg:base bold)[](bg:rose fg:rose)";
       };
 
       character = {
@@ -72,13 +72,13 @@
       directory = {
         truncate_to_repo = true;
         truncation_length = 3;
-		  format = "[ $path ](bg:foam fg:base bold)[](bg:pine fg:foam)";
+		  format = "[ $path ](bg:pine fg:base bold)[](bg:pine fg:pine)";
       };
 
       git_branch = {
         symbol = "on ";
         style = "muted";
-		  format = "[ on $branch ](bg:pine fg:base bold)[](bg:gold fg:pine)";
+		  format = "[ on $branch ](bg:subtle fg:base bold)[](bg:subtle fg:subtle)";
       };
 
       git_status = {
