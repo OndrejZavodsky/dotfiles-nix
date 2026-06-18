@@ -7,12 +7,16 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nixvim = {
+    		url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+  		};
 	};
 
-	outputs = { nixpkgs, home-manager, ... }:
+outputs = { self, nixpkgs, home-manager, nixvim,  ... }@inputs: 
 	let
 		system = "x86_64-linux";
-   	pkgs = nixpkgs.legacyPackages.${system};
+		pkgs = nixpkgs.legacyPackages.${system};
 	in {
 		nixosConfigurations.onix = nixpkgs.lib.nixosSystem {
 			inherit system;
@@ -24,6 +28,9 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
+						
+						extraSpecialArgs = { inherit inputs; };
+
 						users.ondrejz = import ./home.nix;
 						backupFileExtension = "backup";
 					};
