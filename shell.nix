@@ -38,7 +38,7 @@
     settings = {
       add_newline = false; 
       
-      format = "$directory$git_branch$git_status$character";
+      format = "$username$directory$git_branch$git_status$character";
 
       palettes.rose_pine = {
         base    = "#191724";
@@ -56,6 +56,12 @@
       };
 
       palette = "rose_pine";
+		username = {
+        show_always = true;
+        style_user = "bold gold";
+        style_root = "bold love";
+        format = "[$user]($style) ";
+    	};
 
       character = {
         success_symbol = "[❯](bold iris)";
@@ -68,11 +74,11 @@
         truncation_length = 3;
       };
 
-      git_branch = {
-        symbol = "on ";
+		git_branch = {
+        symbol = " ";
         style = "muted";
-        format = "[$symbol$branch](bold rose) "; 
-      };
+        format = "on [$symbol$branch](bold rose) "; 
+   	 };
 
       git_status = {
         format = "([\\[$all_status$ahead_behind\\] ](subtle))";
