@@ -38,7 +38,7 @@
     settings = {
       add_newline = false; 
       
-      format = "$username$directory$git_branch$git_status$character";
+      format = "$directory$git_branch$git_status$character";
 
       palettes.rose_pine = {
         base    = "#191724";
@@ -56,13 +56,6 @@
       };
 
       palette = "rose_pine";
-		
-		username = {
-        show_always = true;
-        style_user = "bg:surface fg:rose bold";
-        style_root = "bg:surface fg:love bold";
-		  format = "[ $user ](bg:rose fg:base bold)[](bg:rose fg:rose)";
-      };
 
       character = {
         success_symbol = "[❯](bold iris)";
@@ -70,19 +63,19 @@
       };
 
       directory = {
+        style = "bold foam";
         truncate_to_repo = true;
         truncation_length = 3;
-		  format = "[ $path ](bg:pine fg:base bold)[](bg:pine fg:pine)";
       };
 
       git_branch = {
         symbol = "on ";
         style = "muted";
-		  format = "[ on $branch ](bg:subtle fg:base bold)[](bg:subtle fg:subtle)";
+        format = "[$symbol$branch](bold rose) "; 
       };
 
       git_status = {
-		  format = "([\\[$all_status$ahead_behind\\]](bg:gold fg:base bold))[](bg:base fg:gold)";
+        format = "([\\[$all_status$ahead_behind\\] ](subtle))";
         style = "bold love";
         
         conflicted = "=";
