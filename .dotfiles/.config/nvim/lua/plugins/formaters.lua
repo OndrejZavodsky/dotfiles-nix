@@ -1,22 +1,13 @@
 return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
-	opts = function()
+	config = function()
+		local conform = require("conform")
+
 		local opts = {
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_format = "fallback",
-			},
-			formatters = {
-				prettier = {
-					prepend_args = { "--use-tabs", "--single-quote" },
-				},
-				black = {
-					prepend_args = { "--line-length", "88" },
-				},
-				stylua = {
-					prepend_args = { "--indent-type", "Tabs", "--indent-width", "1" },
-				},
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -32,6 +23,17 @@ return {
 				typescript = { "prettier" },
 				java = { "google-java-format" },
 			},
+			formatters = {
+				prettier = {
+					prepend_args = { "--use-tabs", "--single-quote" },
+				},
+				black = {
+					prepend_args = { "--line-length", "88" },
+				},
+				stylua = {
+					prepend_args = { "--indent-type", "Tabs", "--indent-width", "1" },
+				},
+			},
 		}
 
 		for _, formatters in pairs(opts.formatters_by_ft) do
@@ -46,6 +48,6 @@ return {
 			end
 		end
 
-		return opts
+		conform.setup(opts)
 	end,
 }
