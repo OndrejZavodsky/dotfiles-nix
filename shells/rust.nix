@@ -1,5 +1,4 @@
-{ pkgs }:
-
+{pkgs}:
 pkgs.mkShell {
   packages = with pkgs; [
     rustc
@@ -14,6 +13,5 @@ pkgs.mkShell {
 
   shellHook = ''
     echo "Rust development environment"
-	 exec zsh
   '';
 }
