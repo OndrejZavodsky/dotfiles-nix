@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./options.nix
     ./keymaps.nix
@@ -27,7 +29,10 @@
 
   programs.nixvim = {
     enable = true;
-	 nixpkgs.pkgs = pkgs;
+    nixpkgs.pkgs = pkgs;
     globals.mapleader = " ";
+    opts = {
+      clipboard = "unnamedplus";
+    };
   };
 }
