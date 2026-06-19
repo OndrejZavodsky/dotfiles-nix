@@ -40,7 +40,7 @@ for i = 1, 10 do
 	)
 end
 
-hl.bind(mainMod .. " ALT + SPACE", hl.dsp.exec_cmd("powermenu"), { desc = "launches powermenu" })
+hl.bind(mainMod .. " + ALT + SPACE", hl.dsp.exec_cmd("powermenu"), { desc = "launches powermenu" })
 
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun"), { desc = "Launch apps" })
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("ghostty"), { desc = "Terminal" })
