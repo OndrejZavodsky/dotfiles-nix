@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.nixvim = {
     plugins.lsp = {
       enable = true;
@@ -8,21 +10,30 @@
       servers = {
         nixd.enable = true;
 
-        pyright.enable = true;
+        pyright = {
+          enable = true;
+          packageFallback = true;
+        };
 
-        clangd.enable = true;
-
+        clangd = {
+          enable = true;
+          packageFallback = true;
+        };
         rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
+          packageFallback = true;
         };
 
         html.enable = true;
         cssls.enable = true;
         jsonls.enable = true;
 
-        jdtls.enable = true;
+        jdtls = {
+          enable = true;
+          packageFallback = true;
+        };
       };
 
       keymaps = {
