@@ -59,6 +59,23 @@
       pavucontrol #sound
       fzf
       fd
+      #java
+
+      jdk21
+      gradle
+      jdt-language-server
+      google-java-format
+
+      #rust
+      cargo
+      rustfmt
+      clippy
+      rust-analyzer
+      pkg-config
+      gcc
+      openssl
+
+      python3
     ];
   };
   programs.firefox.enable = true;
@@ -77,6 +94,7 @@
     cmake
     brave
     rustc
+
     clang
     gnum4
   ];
