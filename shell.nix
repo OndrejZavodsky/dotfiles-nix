@@ -24,7 +24,7 @@
               local query=$(echo "$*" | tr ' ' '+')
               w3m "https://search.brave.com/search?q=$query"
           }
-      bind -x '"C-f":dev'
+      bind -x '"\C-f":dev'
     '';
     profileExtra = ''
       [[ -f ~/.bashrc ]] && source ~/.bashrc
