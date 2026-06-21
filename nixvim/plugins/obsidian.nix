@@ -1,10 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.nixvim.plugins.obsidian = {
     enable = true;
 
     settings = {
+      legacy_commands = false;
+      conceallevel = 1;
       workspaces = [
         {
           name = "personal";

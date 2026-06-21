@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.nixvim.plugins.conform-nvim = {
     enable = true;
 
@@ -11,33 +13,34 @@
       };
 
       formatters_by_ft = {
-        lua = [ "stylua" ];
-        python = [ "black" "isort" ];
-        rust = [ "rustfmt" ];
-        nix = [ "alejandra" ]; 
-        sql = [ "sqlfluff" ];
-        json = [ "prettier" ];
-        yaml = [ "prettier" ];
-        markdown = [ "prettier" ];
-        html = [ "prettier" ];
-        css = [ "prettier" ];
-        javascript = [ "prettier" ];
-        typescript = [ "prettier" ];
-        java = [ "google-java-format" ];
+        lua = ["stylua"];
+        python = ["black" "isort"];
+        rust = ["rustfmt"];
+        nix = ["alejandra"];
+        sql = ["sqlfluff"];
+        json = ["prettier"];
+        yaml = ["prettier"];
+        markdown = ["prettier"];
+        html = ["prettier"];
+        css = ["prettier"];
+        javascript = ["prettier"];
+        typescript = ["prettier"];
+        java = ["google-java-format"];
+        go = ["goimports" "gofmt"];
       };
 
       formatters = {
         prettier = {
-			 command = "${pkgs.prettier}/bin/prettier";
-          prepend_args = [ "--use-tabs" "--single-quote" ];
+          command = "${pkgs.prettier}/bin/prettier";
+          prepend_args = ["--use-tabs" "--single-quote"];
         };
         black = {
           command = "${pkgs.black}/bin/black";
-          prepend_args = [ "--line-length" "88" ];
+          prepend_args = ["--line-length" "88"];
         };
         stylua = {
           command = "${pkgs.stylua}/bin/stylua";
-          prepend_args = [ "--indent-type" "Tabs" "--indent-width" "1" ];
+          prepend_args = ["--indent-type" "Tabs" "--indent-width" "1"];
         };
         isort = {
           command = "${pkgs.python3Packages.isort}/bin/isort";
@@ -53,6 +56,12 @@
         };
         alejandra = {
           command = "${pkgs.alejandra}/bin/alejandra";
+        };
+        goimports = {
+          command = "${pkgs.gotools}/bin/goimports";
+        };
+        gofmt = {
+          command = "${pkgs.go}/bin/gofmt";
         };
       };
     };

@@ -76,6 +76,12 @@
       openssl
 
       python3
+
+      go
+      gopls
+      delve
+      gotools
+      gotestsum
     ];
   };
   programs.firefox.enable = true;

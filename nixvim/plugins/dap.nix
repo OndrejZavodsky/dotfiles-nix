@@ -1,10 +1,13 @@
-{ config, pkgs, helpers, ... }:
-
 {
+  config,
+  pkgs,
+  helpers,
+  ...
+}: {
   programs.nixvim.plugins = {
     dap = {
       enable = true;
-      
+
       settings.listeners = {
         before = {
           attach = {
@@ -28,6 +31,9 @@
     };
 
     dap-virtual-text = {
+      enable = true;
+    };
+    dap-go = {
       enable = true;
     };
   };

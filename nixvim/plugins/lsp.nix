@@ -9,6 +9,7 @@
 
       servers = {
         nixd.enable = true;
+        gopls.enable = true;
 
         pyright = {
           enable = true;
