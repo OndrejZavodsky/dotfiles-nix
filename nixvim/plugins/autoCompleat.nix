@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.nixvim.plugins = {
     cmp = {
       enable = true;
@@ -15,11 +17,11 @@
         };
 
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
-          { name = "buffer"; }
-          { name = "path"; }
-			 { name = "vim-dadbod-completion"; } 
+          {name = "nvim_lsp";}
+          {name = "luasnip";}
+          {name = "buffer";}
+          {name = "path";}
+          {name = "vim-dadbod-completion";}
         ];
       };
     };

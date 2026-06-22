@@ -3,12 +3,12 @@
   pkgs,
   ...
 }: {
+  programs.nixvim.opts.conceallevel = 1;
   programs.nixvim.plugins.obsidian = {
     enable = true;
 
     settings = {
       legacy_commands = false;
-      conceallevel = 1;
       workspaces = [
         {
           name = "personal";
@@ -21,7 +21,7 @@
       ];
 
       completion = {
-        min_chars = 2;
+        min_chars = 1;
       };
     };
   };

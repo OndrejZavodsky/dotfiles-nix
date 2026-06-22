@@ -37,7 +37,7 @@
             extraSpecialArgs = {inherit inputs;};
 
             users.ondrejz = import ./home.nix;
-            backupFileExtension = "backup";
+            backupFileExtension = "back";
           };
         }
       ];
