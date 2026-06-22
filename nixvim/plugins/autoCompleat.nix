@@ -17,6 +17,7 @@
         };
 
         sources = [
+          {name = "obsidian";}
           {name = "nvim_lsp";}
           {name = "luasnip";}
           {name = "buffer";}
