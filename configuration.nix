@@ -76,6 +76,7 @@
       openssl
 
       python3
+      ripgrep
     ];
   };
   programs.firefox.enable = true;
