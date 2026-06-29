@@ -1,13 +1,16 @@
-{ config, lib, pkgs, ... }:
-
-with lib; 
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.modules.game;
 in {
   options.modules.game = {
     enable = mkOption {
       type = types.bool;
-      default = false; 
+      default = false;
       description = "Whether to enable gaming packages and configurations.";
     };
   };
@@ -15,8 +18,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       heroic
-    	faugus-launcher
-	 ];
-
+      faugus-launcher
+    ];
   };
 }
